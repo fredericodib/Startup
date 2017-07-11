@@ -1,0 +1,22 @@
+<h1>Dados do aluno</h1>
+<br>
+<strong>Nome: </strong>
+<%= @student.name %>
+<br>
+<strong>Email: </strong>
+<%= @student.email %>
+<br>
+<strong>Matricula: </strong>
+<%= @student.registration %>
+<br>
+<strong>Turma: </strong>
+<%= @student.student_class %>
+<br>
+<strong>Sexo: </strong>
+<%= @student.gender %>
+<br>
+<strong>Data de nascimento: </strong>
+<%= @student.birthday %>
+<br>
+<br>
+<%= link_to 'Edit', edit_school_student_path(@school, @student) %>

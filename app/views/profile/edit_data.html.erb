@@ -1,0 +1,14 @@
+<h1>Alterar dados</h1>
+
+<%= form_for @admin, url: profile_update_path(@admin), method: :patch do |f| %>
+	<%= f.label :name %>
+  	<%= f.text_field :name %>
+  	<br>
+  	<%= f.label :cpf %>
+  	<%= f.text_field :cpf %>
+  	<br>
+  	<%= f.label :phone %>
+  	<%= f.text_field :phone %>
+  	<br>
+  	<%= f.submit "Atualizar" %>
+<% end %>

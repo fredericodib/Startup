@@ -1,0 +1,19 @@
+<strong>Nome: </strong>
+<%= admin.name %>
+<br>
+<strong>Email: </strong>
+<%= admin.email %>
+<br>
+<strong>CPF: </strong>
+<%= admin.cpf %>
+<br>
+<strong>Telefone: </strong>
+<%= admin.phone %>
+<br>
+<% if !admin.manager? %>
+	<strong>Escola vinculada: </strong>
+	<%= admin.school.try(:name) %>
+<br>
+<% end %>
+<strong>Função: </strong>
+<%= admin.role %>

@@ -1,0 +1,2 @@
+module Startup::PagesHelper
+end

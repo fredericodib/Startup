@@ -1,0 +1,34 @@
+<h1>Cadastrar gestor da startup</h1>
+
+<%= form_for @admin, url: startup_admins_path, method: :post do |f| %>
+  	<% if @admin.errors.any? %>
+    	<div id="error_explanation">
+      		<h4><%= pluralize(@admin.errors.count, "erros:") %></h4>
+      		<ul>
+      			<% @admin.errors.full_messages.each do |message| %>
+        			<li><%= message %></li>
+      			<% end %>
+      		</ul>
+    	</div>
+  	<% end %>
+  
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+	<br>
+	<%= f.label :email %>
+	<%= f.text_field :email %>
+	<br>
+	<%= f.label :cpf %>
+	<%= f.text_field :cpf %>
+  	<br>
+  	<%= f.label :phone %>
+	<%= f.text_field :phone %>
+  	<br>
+	<%= f.label :password %>
+	<%= f.password_field :password %>
+	<br>
+	<%= f.label :password_confirmation %>
+	<%= f.password_field :password_confirmation %>
+	<br>
+	<%= f.submit "Cadastrar" %>
+<% end %>

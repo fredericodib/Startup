@@ -1,0 +1,2 @@
+module Startup::AdminsHelper
+end

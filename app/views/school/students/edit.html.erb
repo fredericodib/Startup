@@ -1,0 +1,35 @@
+<h1>Editar aluno</h1>
+
+<%= form_for @student, url: school_student_path, method: :patch do |f| %>
+	<% if @student.errors.any? %>
+	  	<div id="error_explanation">
+	  		<h4><%= pluralize(@student.errors.count, "erros:") %></h4>
+	  		<ul>
+	  			<% @student.errors.full_messages.each do |message| %>
+	    			<li><%= message %></li>
+	  			<% end %>
+	  		</ul>
+	  	</div>
+	<% end %>
+
+  	<%= f.select :student_class, Student.student_classes.keys.to_a %>
+	<br>
+	<%= f.select :gender, Student.genders.keys.to_a %>
+	<br>
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+	<br>
+	<%= f.label :registration %>
+	<%= f.text_field :registration %>
+	<br>
+	<%= f.label :birthday %>
+	<%= f.text_field :birthday %>
+  	<br>
+	<%= f.label :password %>
+	<%= f.password_field :password %>
+	<br>
+	<%= f.label :password_confirmation %>
+	<%= f.password_field :password_confirmation %>
+	<br>
+	<%= f.submit "Editar" %>
+<% end %>

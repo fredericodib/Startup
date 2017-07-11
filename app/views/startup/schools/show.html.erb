@@ -1,0 +1,29 @@
+<h1>Dados da escola</h1>
+<br>
+<p>
+  <strong>Name:</strong>
+  <%= @school.name %>
+</p>
+
+<p>
+  <strong>Cep:</strong>
+  <%= @school.cep %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @school.address %>
+</p>
+
+<p>
+  <strong>Cnpj:</strong>
+  <%= @school.cnpj %>
+</p>
+
+<p>
+  <strong>Social reason:</strong>
+  <%= @school.social_reason %>
+</p>
+
+<%= link_to 'Edit', edit_startup_school_path(@school) %> |
+<%= link_to 'Back', startup_schools_path %>

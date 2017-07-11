@@ -1,0 +1,95 @@
+<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <%= link_to "#{@school.name}", school_root_path(@school), class: "navbar-brand" %>
+    </div>
+    <!-- /.navbar-header -->
+
+    <ul class="nav navbar-top-links navbar-right">
+        <!-- /.dropdown -->
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-user">
+                <li><a href="/profile/datas"><i class="fa fa-user fa-fw"></i> Perfil</a>
+                </li>
+                <li class="divider"></li>
+                <li>
+                    <%= link_to destroy_admin_session_path, method: :delete do %>
+                        <i class="fa fa-sign-out fa-fw"></i>
+                        <span> Logout</span>
+                    <% end %>
+                </li>
+            </ul>
+            <!-- /.dropdown-user -->
+        </li>
+        <!-- /.dropdown -->
+    </ul>
+    <!-- /.navbar-top-links -->
+
+    <div class="navbar-default sidebar" role="navigation">
+        <div class="sidebar-nav navbar-collapse">
+            <ul class="nav" id="side-menu">
+                <% if !current_admin.teacher? %>
+                    <li>
+                        <a href="#"><i class="fa fa-group fa-fw"></i> Coordenanação<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <%= link_to "Adicionar coordenadores e professores", new_school_admin_path(@school) %>
+                            </li>
+                            <li>
+                                <%= link_to "Adicionar aluno", new_school_student_path(@school) %>
+                            </li>
+                            <li>
+                                <%= link_to "Ver membros da escola", school_admins_path(@school) %>
+                            </li>
+                        </ul>
+                        <!-- /.nav-second-level -->
+                    </li>
+                <% end %>
+
+                <li>
+                    <a href="#"><i class="fa fa-group fa-fw"></i> Professores<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <%= link_to "Cadastrar questões", "#" %>
+                        </li>
+                        <li>
+                            <%= link_to "Ver Alunos", school_students_path(@school) %>
+                        </li>
+                    </ul>
+                    <!-- /.nav-second-level -->
+                </li>
+
+                <li>
+                    <a href="#"><i class="fa fa-group fa-fw"></i> Dashbord<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <%= link_to "Dashbord por aluno", "#" %>
+                        </li>
+                        <li>
+                            <%= link_to "Dashbord por turma", "#" %>
+                        </li>
+                        <li>
+                            <%= link_to "Dashbord da escola", "#" %>
+                        </li>
+                    </ul>
+                    <!-- /.nav-second-level -->
+                </li>
+                <% if current_admin.manager? %>
+                    <li>
+                        <a href="/startup/schools"><i class="fa fa-arrow-left fa-fw"></i> Voltar</a>
+                    </li>
+                <% end %>
+            </ul>
+        </div>
+        <!-- /.sidebar-collapse -->
+    </div>
+    <!-- /.navbar-static-side -->
+</nav>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Startup</title>
+    <%= csrf_meta_tags %>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div id="wrapper">
+      <%= render "layouts/shared/navbar-profile" %>
+      <div id="page-wrapper">
+        <% if notice %>
+          <div class="container">
+            <div class="alert alert-success alert-dismissable">
+              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+              <%= notice %>
+            </div>
+          </div>
+        <% end %>
+        <% if alert %>
+          <div class="container">
+            <div class="alert alert-danger alert-dismissable">
+              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+              <%= alert %>
+            </div>
+          </div>
+        <% end %>
+        <%= yield %>
+      </div>
+    </div>
+  </body>
+  
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</html>

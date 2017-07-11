@@ -1,0 +1,26 @@
+<h1>Gestores da escola</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>email</th>
+      <th>função</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admins.each do |admin| %>
+      <tr>
+        <td><%= admin.name %></td>
+        <td><%= admin.email %></td>
+        <td><%= admin.role %></td>
+        <td><%= link_to 'Show', school_admin_path(@school, admin) %></td>
+        <% if admin != current_admin %>
+          <td><%= link_to 'Destroy', school_admin_path(@school, admin), method: :delete, data: { confirm: 'Tem certeza?' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
