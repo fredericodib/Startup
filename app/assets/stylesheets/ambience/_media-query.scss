@@ -5,8 +5,8 @@ $medium-range-max:  991px;
 $large-range-min:   992px; 
 $large-range-max:   1199px;
 $xlarge-range-min:  1200px;
-$xlarge-range-max:  1920px;
-$xxlarge-range-min: 1921px;
+$xlarge-range-max:  1599px;
+$xxlarge-range-min: 1600px;
 
 
 // Defining media queries
@@ -27,6 +27,6 @@ $xxlarge-up:   "only screen and (min-width:#{$xxlarge-range-min})" !default;
 //
 // Uso Exemplo:
 //
-// @media #{small-only} {
+// @media #{$small-only} {
 //
 // }
