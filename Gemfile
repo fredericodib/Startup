@@ -35,6 +35,8 @@ gem 'devise'
 gem "font-awesome-rails"
 gem 'rails-i18n'
 gem 'devise-i18n'
+gem 'carrierwave'
+gem 'mini_magick'
 
 group :production do
   gem 'pg'

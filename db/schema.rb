@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170711163245) do
+ActiveRecord::Schema.define(version: 20170721214506) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20170711163245) do
     t.integer "school_id"
     t.integer "role"
     t.string "phone"
+    t.string "photo"
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
     t.index ["school_id"], name: "index_admins_on_school_id"
@@ -43,6 +44,7 @@ ActiveRecord::Schema.define(version: 20170711163245) do
     t.string "social_reason"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "photo"
   end
 
   create_table "students", force: :cascade do |t|

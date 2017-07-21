@@ -1,5 +1,6 @@
 class Admin < ApplicationRecord
   belongs_to :school, optional: true
+  mount_uploader :photo, PhotoUploader
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,

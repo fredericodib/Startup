@@ -30,5 +30,8 @@
 	<%= f.label :password_confirmation %>
 	<%= f.password_field :password_confirmation %>
 	<br>
+	<%= f.label :photo %>
+    <%= f.file_field :photo %>
+    <br/>
 	<%= f.submit "Cadastrar" %>
 <% end %>

@@ -35,7 +35,7 @@ class Startup::AdminsController < StartupController
 	private
 
 	def params_admin
-      	params.require(:admin).permit(:name, :email, :password, :password_confirmation, :cpf, :phone)
+      	params.require(:admin).permit(:name, :email, :password, :password_confirmation, :cpf, :phone, :photo)
   	end
   
 end

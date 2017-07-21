@@ -3,6 +3,7 @@
 <table class="table">
   <thead>
     <tr>
+      <th colspan="1"></th>
       <th>Name</th>
       <th>email</th>
       <th colspan="2"></th>
@@ -12,6 +13,7 @@
   <tbody>
     <% @admins.each do |admin| %>
       <tr>
+        <td><%= image_tag admin.photo.thumb %></td>
         <td><%= admin.name %></td>
         <td><%= admin.email %></td>
         <td><%= link_to 'Show', startup_admin_path(admin) %></td>
