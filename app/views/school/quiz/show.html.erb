@@ -1,0 +1,24 @@
+<h1>Prova: <%= @quiz.name %></h1>
+<br>
+<h3>Questões:</h3>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Numero</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @questions.each do |question| %>
+      <tr>
+        <td><%= question.number %></td>
+        <td><%= link_to 'Edit', edit_school_question_path(@school, @quiz, question) %></td>
+        <td><%= link_to 'Destroy', school_question_path(@school, @quiz, question), method: :delete, data: { confirm: 'Tem certeza?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Nova questão', new_school_question_path(@school, @quiz) %>

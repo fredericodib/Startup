@@ -19,6 +19,10 @@ Rails.application.routes.draw do
  		root "home#home"
  		resources :admins, :only => [:new, :index, :create, :show, :destroy]
  		resources :students
+ 		resources :quiz
+ 		scope "quiz/:quiz_id" do
+ 			resources :questions, :only => [:new, :create, :edit, :update, :destroy]
+ 		end
  	end
 
 end

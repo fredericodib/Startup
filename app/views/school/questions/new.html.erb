@@ -1,0 +1,21 @@
+<h1>Prova: <%= @quiz.name %></h1>
+<h3>Cadastrar nova questão</h3>
+<br>
+
+<%= form_for @question, url: school_questions_path(@school, @quiz), method: :post do |f| %>
+  	<% if @question.errors.any? %>
+    	<div id="error_explanation">
+      		<h4><%= pluralize(@question.errors.count, "erros:") %></h4>
+      		<ul>
+      			<% @question.errors.full_messages.each do |message| %>
+        			<li><%= message %></li>
+      			<% end %>
+      		</ul>
+    	</div>
+  	<% end %>
+
+	<%= f.label :number %>
+	<%= f.text_field :number %>
+	<br>
+	<%= f.submit "Cadastrar" %>
+<% end %>

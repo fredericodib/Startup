@@ -1,0 +1,23 @@
+<h1>Provas e simulados cadastrados</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @quiz.each do |quiz| %>
+      <tr>
+        <td><%= quiz.name %></td>
+        <td><%= link_to 'Edit', edit_school_quiz_path(@school, quiz) %></td>
+        <td><%= link_to 'Show', school_quiz_path(@school, quiz) %></td>
+        <td><%= link_to 'Destroy', school_quiz_path(@school, quiz), method: :delete, data: { confirm: 'Tem certeza?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Nova prova', new_school_quiz_path(@school) %>

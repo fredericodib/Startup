@@ -1,0 +1,2 @@
+module School::QuestionsHelper
+end
