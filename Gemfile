@@ -37,6 +37,7 @@ gem 'rails-i18n'
 gem 'devise-i18n'
 gem 'carrierwave'
 gem 'mini_magick'
+gem "cocoon"
 
 group :production do
   gem 'pg'

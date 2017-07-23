@@ -44,7 +44,7 @@ class School::QuestionsController < SchoolController
 	private
 
 	def params_question
-      	params.require(:question).permit(:number)
+      	params.require(:question).permit(:number, :comment, choices_attributes: [:id, :text, :correct, :_destroy])
   	end
 
 end
