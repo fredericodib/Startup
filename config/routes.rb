@@ -23,6 +23,10 @@ Rails.application.routes.draw do
  		scope "quiz/:quiz_id" do
  			resources :questions, :only => [:new, :create, :edit, :update, :destroy]
  		end
+ 		get "/topics/:id" => "questions#topics"
  	end
 
+ 	namespace :api do
+ 		post "/login.json" => "sessions#create"
+ 	end
 end

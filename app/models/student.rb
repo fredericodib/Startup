@@ -14,9 +14,9 @@ class Student < ApplicationRecord
 
 
 	def self.valid_login?(email, password)
-	    user = find_by(email: email)
-	    if user && user.authenticate(password)
-	      	user
+	    student = find_by(email: email)
+	    if student && student.authenticate(password)
+	      	student
 	    end
 	end
 end
