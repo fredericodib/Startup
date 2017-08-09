@@ -28,5 +28,7 @@ Rails.application.routes.draw do
 
  	namespace :api do
  		post "/login.json" => "sessions#create"
+ 		post "/update_student" => "students#update"
+ 		get "/return_student.json" => "sessions#return_student"
  	end
 end

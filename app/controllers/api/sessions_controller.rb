@@ -16,6 +16,10 @@ class Api::SessionsController < ApiController
     	head :ok
   	end
 
+    def return_student
+      render json: current_student
+    end
+
   	private
 
   	def send_student(student)
