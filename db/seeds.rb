@@ -3,20 +3,20 @@ Admin.first.manager!
 
 
 
-#Materias
-@artes = Discipline.find_or_create_by(name: 'Artes')
-@bio = Discipline.find_or_create_by(name: 'Biologia')
-@filo = Discipline.find_or_create_by(name: 'Filosofia')
-@fisica = Discipline.find_or_create_by(name: 'Física')
-@geo = Discipline.find_or_create_by(name: 'Geografia')
-@historia = Discipline.find_or_create_by(name: 'História')
-@mat = Discipline.find_or_create_by(name: 'Matematica')
-@quimica = Discipline.find_or_create_by(name: 'Quimica')
-@portugues = Discipline.find_or_create_by(name: 'portugues')
-@ingles = Discipline.find_or_create_by(name: 'ingles')
-@espanhol = Discipline.find_or_create_by(name: 'Espanhol')
+#Materias Pre vestibular
+@artes = Discipline.find_or_create_by(name: 'Artes', discipline_type: 'pre_vestibular')
+@bio = Discipline.find_or_create_by(name: 'Biologia', discipline_type: 'pre_vestibular')
+@filo = Discipline.find_or_create_by(name: 'Filosofia', discipline_type: 'pre_vestibular')
+@fisica = Discipline.find_or_create_by(name: 'Física', discipline_type: 'pre_vestibular')
+@geo = Discipline.find_or_create_by(name: 'Geografia', discipline_type: 'pre_vestibular')
+@historia = Discipline.find_or_create_by(name: 'História', discipline_type: 'pre_vestibular')
+@mat = Discipline.find_or_create_by(name: 'Matematica', discipline_type: 'pre_vestibular')
+@quimica = Discipline.find_or_create_by(name: 'Quimica', discipline_type: 'pre_vestibular')
+@portugues = Discipline.find_or_create_by(name: 'portugues', discipline_type: 'pre_vestibular')
+@ingles = Discipline.find_or_create_by(name: 'ingles', discipline_type: 'pre_vestibular')
+@espanhol = Discipline.find_or_create_by(name: 'Espanhol', discipline_type: 'pre_vestibular')
 
-#Topicos
+#Topicos Pre vestibular
 
 #Artes
 Topic.find_or_create_by(name: 'Artes Cênicas', discipline_id: @artes.id)
@@ -178,3 +178,18 @@ Topic.find_or_create_by(name: 'Interpretação de Texto(espanhol)', discipline_i
 Topic.find_or_create_by(name: 'Vocabulário', discipline_id: @espanhol.id)
 Topic.find_or_create_by(name: 'Verbo', discipline_id: @espanhol.id)
 Topic.find_or_create_by(name: 'Sintaxe', discipline_id: @espanhol.id)
+
+
+
+#Materias Pre concurço
+@m1 = Discipline.find_or_create_by(name: 'materia1', discipline_type: 'preparatorio_concurcos')
+@m2 = Discipline.find_or_create_by(name: 'materia2', discipline_type: 'preparatorio_concurcos')
+@m3 = Discipline.find_or_create_by(name: 'materia3', discipline_type: 'preparatorio_concurcos')
+@m4 = Discipline.find_or_create_by(name: 'materia4', discipline_type: 'preparatorio_concurcos')
+@m5 = Discipline.find_or_create_by(name: 'materia5', discipline_type: 'preparatorio_concurcos')
+@m6 = Discipline.find_or_create_by(name: 'materia6', discipline_type: 'preparatorio_concurcos')
+@m7 = Discipline.find_or_create_by(name: 'materia7', discipline_type: 'preparatorio_concurcos')
+@m8 = Discipline.find_or_create_by(name: 'materia8', discipline_type: 'preparatorio_concurcos')
+@m9 = Discipline.find_or_create_by(name: 'materia9', discipline_type: 'preparatorio_concurcos')
+@m10 = Discipline.find_or_create_by(name: 'materia10', discipline_type: 'preparatorio_concurcos')
+@m11 = Discipline.find_or_create_by(name: 'materia11', discipline_type: 'preparatorio_concurcos')

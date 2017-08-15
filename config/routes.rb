@@ -30,5 +30,6 @@ Rails.application.routes.draw do
  		post "/login.json" => "sessions#create"
  		post "/update_student" => "students#update"
  		get "/return_student.json" => "sessions#return_student"
+ 		get "/render_quizes.json" => "quiz#render_quizes"
  	end
 end

@@ -3,7 +3,7 @@ class School::QuestionsController < SchoolController
 	def new
 		@question = Question.new
 		@quiz = Quiz.find(params[:quiz_id])
-		@disciplines = Discipline.all
+		@disciplines = Discipline.all.where(discipline_type: @school.school_type)
 		@topics = @disciplines.first.topics
 
 		if @quiz.questions.any?
@@ -33,7 +33,7 @@ class School::QuestionsController < SchoolController
 	def edit
 		@question = Question.find(params[:id])
 		@quiz = Quiz.find(params[:quiz_id])
-		@disciplines = Discipline.all
+		@disciplines = Discipline.all.where(discipline_type: @school.school_type)
 		@topics = @question.discipline.topics
 	end
 

@@ -1,0 +1,2 @@
+class Productivity < ApplicationRecord
+end
