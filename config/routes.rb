@@ -31,5 +31,9 @@ Rails.application.routes.draw do
  		post "/update_student" => "students#update"
  		get "/return_student.json" => "sessions#return_student"
  		get "/render_quizes.json" => "quiz#render_quizes"
+ 		get "/list_disciplines.json" => "produtivities#list_disciplines"
+ 		post "/produtivity_informations.json" => "produtivities#produtivity_informations"
+ 		post "/produtivity/create.json" => "produtivities#create"
+ 		post "/cronometer/create.json" => "cronometer_logs#create"
  	end
 end

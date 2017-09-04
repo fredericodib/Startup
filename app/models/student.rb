@@ -1,6 +1,8 @@
 class Student < ApplicationRecord
   	belongs_to :school
 
+  	has_many :productivities, dependent: :destroy
+
   	has_secure_password
 	has_secure_token
 
