@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170827210809) do
+ActiveRecord::Schema.define(version: 20170906033831) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 20170827210809) do
     t.integer "student_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "date"
     t.index ["discipline_id"], name: "index_cronometer_logs_on_discipline_id"
     t.index ["student_id"], name: "index_cronometer_logs_on_student_id"
   end
@@ -70,6 +71,7 @@ ActiveRecord::Schema.define(version: 20170827210809) do
     t.datetime "updated_at", null: false
     t.integer "discipline_id"
     t.integer "student_id"
+    t.datetime "date"
     t.index ["discipline_id"], name: "index_productivities_on_discipline_id"
     t.index ["student_id"], name: "index_productivities_on_student_id"
   end

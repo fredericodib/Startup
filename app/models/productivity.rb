@@ -2,7 +2,7 @@ class Productivity < ApplicationRecord
 	belongs_to :discipline
 	belongs_to :student
 
-	validates :total_questions, :correct_questions, :time_studed, presence: true
+	validates :total_questions, :correct_questions, :time_studed, :date, presence: true
 
 	def self.find_productivity(rengeTime, customRangeBeginning, customRangeEnd, student, discipline)
 		if rengeTime == "today"
@@ -23,9 +23,9 @@ class Productivity < ApplicationRecord
 		end
 
 		if discipline == "all"
-			@productivity = student.productivities.where(created_at: @interval)
+			@productivity = student.productivities.where(date: @interval)
 		else
-			@productivity = student.productivities.where(created_at: @interval, discipline_id: discipline)
+			@productivity = student.productivities.where(date: @interval, discipline_id: discipline)
 		end
 
 		return @productivity.order(:discipline_id)

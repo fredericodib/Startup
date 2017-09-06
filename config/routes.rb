@@ -35,5 +35,6 @@ Rails.application.routes.draw do
  		post "/produtivity_informations.json" => "produtivities#produtivity_informations"
  		post "/produtivity/create.json" => "produtivities#create"
  		post "/cronometer/create.json" => "cronometer_logs#create"
+ 		get "/cronometer/list_of_time_logs.json" => "cronometer_logs#list_of_time_logs"
  	end
 end

@@ -2,5 +2,5 @@ class CronometerLog < ApplicationRecord
   belongs_to :discipline
   belongs_to :student
 
-  validates :time, presence: true
+  validates :time, :date, presence: true
 end

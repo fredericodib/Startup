@@ -2,12 +2,13 @@ class Student < ApplicationRecord
   	belongs_to :school
 
   	has_many :productivities, dependent: :destroy
+  	has_many :cronometer_logs, dependent: :destroy
 
   	has_secure_password
 	has_secure_token
 
 	validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
-	validates :email, :registration, uniqueness: true
+	validates :email, uniqueness: true
 	validates :email, :name, :registration, presence: true
 	validates :password, length: { minimum: 6 }, allow_nil: true
 

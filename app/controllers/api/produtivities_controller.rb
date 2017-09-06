@@ -12,7 +12,6 @@ class Api::ProdutivitiesController < ApiController
   		if @productivity.save
     		render json: nil
   		else
-        byebug
     		render json: @productivity.errors, status: :unprocessable_entity
   		end
     end
@@ -34,13 +33,13 @@ class Api::ProdutivitiesController < ApiController
 	private
 
   	def productivity_params
-  		params.require(:productivity).permit(:total_questions, :correct_questions, :time_studed, :discipline_id)
+  		params.require(:productivity).permit(:total_questions, :correct_questions, :time_studed, :discipline_id, :date)
   	end
 
     def create_multiple_objects
       @productivity = []
       params[:array].each do |elem|
-        @productivity = Productivity.new(elem.require(:productivity).permit(:total_questions, :correct_questions, :time_studed, :discipline_id))
+        @productivity = Productivity.new(elem.require(:productivity).permit(:total_questions, :correct_questions, :time_studed, :discipline_id, :date))
         @productivity.student = current_student
         @productivity.save
       end
