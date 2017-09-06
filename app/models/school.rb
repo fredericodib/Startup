@@ -6,4 +6,6 @@ class School < ApplicationRecord
 
 	validates :name, :cnpj, :cep, :address, :social_reason, presence: true
 	validates :cnpj, uniqueness: true
+
+	enum school_type: [ :pre_vestibular, :preparatorio_concurcos ]
 end

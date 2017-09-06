@@ -41,7 +41,11 @@
     <%= form.file_field :photo %>
   </div>
   <br>
-
+  <div class="field">
+    <%= form.label :school_type %>
+    <%= form.select :school_type, School.school_types.keys.to_a %>
+  </div>
+  <br>
   <div class="actions">
     <%= form.submit %>
   </div>

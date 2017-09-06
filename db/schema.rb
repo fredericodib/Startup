@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170723173228) do
+ActiveRecord::Schema.define(version: 20170906033831) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -45,13 +45,51 @@ ActiveRecord::Schema.define(version: 20170723173228) do
     t.index ["question_id"], name: "index_choices_on_question_id"
   end
 
+  create_table "cronometer_logs", force: :cascade do |t|
+    t.integer "discipline_id"
+    t.integer "time"
+    t.integer "student_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.datetime "date"
+    t.index ["discipline_id"], name: "index_cronometer_logs_on_discipline_id"
+    t.index ["student_id"], name: "index_cronometer_logs_on_student_id"
+  end
+
+  create_table "disciplines", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "discipline_type"
+  end
+
+  create_table "productivities", force: :cascade do |t|
+    t.integer "total_questions"
+    t.integer "correct_questions"
+    t.integer "time_studed"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "discipline_id"
+    t.integer "student_id"
+    t.datetime "date"
+    t.index ["discipline_id"], name: "index_productivities_on_discipline_id"
+    t.index ["student_id"], name: "index_productivities_on_student_id"
+  end
+
   create_table "questions", force: :cascade do |t|
     t.integer "number"
     t.integer "quiz_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "comment"
+    t.integer "discipline_id"
+    t.index ["discipline_id"], name: "index_questions_on_discipline_id"
     t.index ["quiz_id"], name: "index_questions_on_quiz_id"
+  end
+
+  create_table "questions_topics", id: false, force: :cascade do |t|
+    t.integer "topic_id", null: false
+    t.integer "question_id", null: false
   end
 
   create_table "quizzes", force: :cascade do |t|
@@ -71,6 +109,7 @@ ActiveRecord::Schema.define(version: 20170723173228) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "photo"
+    t.integer "school_type"
   end
 
   create_table "students", force: :cascade do |t|
@@ -86,6 +125,14 @@ ActiveRecord::Schema.define(version: 20170723173228) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["school_id"], name: "index_students_on_school_id"
+  end
+
+  create_table "topics", force: :cascade do |t|
+    t.string "name"
+    t.integer "discipline_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["discipline_id"], name: "index_topics_on_discipline_id"
   end
 
 end

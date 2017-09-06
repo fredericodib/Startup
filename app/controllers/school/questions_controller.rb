@@ -3,6 +3,20 @@ class School::QuestionsController < SchoolController
 	def new
 		@question = Question.new
 		@quiz = Quiz.find(params[:quiz_id])
+		@disciplines = Discipline.all.where(discipline_type: @school.school_type)
+		@topics = @disciplines.first.topics
+
+		if @quiz.questions.any?
+			@question.number = @quiz.questions.last.number + 1
+		else
+			@question.number = 1
+		end
+
+		@question.choices << Choice.new(text: "A)")
+		@question.choices << Choice.new(text: "B)")
+		@question.choices << Choice.new(text: "C)")
+		@question.choices << Choice.new(text: "D)")
+		@question.choices << Choice.new(text: "E)")
 	end
 
 	def create
@@ -19,6 +33,8 @@ class School::QuestionsController < SchoolController
 	def edit
 		@question = Question.find(params[:id])
 		@quiz = Quiz.find(params[:quiz_id])
+		@disciplines = Discipline.all.where(discipline_type: @school.school_type)
+		@topics = @question.discipline.topics
 	end
 
 	def update
@@ -41,10 +57,16 @@ class School::QuestionsController < SchoolController
     	end
 	end
 
+	def topics
+		@discipline = Discipline.find(params[:id])
+		@topics = @discipline.topics
+		render :file => "/school/questions/topic.js.erb"
+	end
+
 	private
 
 	def params_question
-      	params.require(:question).permit(:number, :comment, choices_attributes: [:id, :text, :correct, :_destroy])
+      	params.require(:question).permit(:number, :comment, :discipline_id, choices_attributes: [:id, :text, :correct, :_destroy], topic_ids: [])
   	end
 
 end

@@ -69,6 +69,6 @@ class Startup::SchoolsController < StartupController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def school_params
-      params.require(:school).permit(:name, :cep, :address, :cnpj, :social_reason, :photo)
+      params.require(:school).permit(:name, :cep, :address, :cnpj, :social_reason, :photo, :school_type)
     end
 end

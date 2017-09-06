@@ -1,0 +1,6 @@
+<%= collection_check_boxes(:question, :topic_ids, @topics, :id, :name) do |b| %>
+    <div class="col-sm-3">
+        <%= b.label %>
+        <%= b.check_box %>
+    </div>
+<% end %>

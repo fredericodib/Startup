@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  total_questions: 1
+  correct_questions: 1
+  time_studed: 1
+
+two:
+  total_questions: 1
+  correct_questions: 1
+  time_studed: 1
