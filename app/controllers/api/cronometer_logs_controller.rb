@@ -3,14 +3,14 @@ class Api::CronometerLogsController < ApiController
 	def create
     if params[:array]
       create_multiple_objects
-      render json: current_student.cronometer_logs.order(date: :desc)
+      render json: current_student.cronometer_logs.order("date DESC, id DESC").to_json(:include => :discipline)
 
     else
     	@cronometer = CronometerLog.new(cronometer_params)
     	@cronometer.student = current_student
 
   		if @cronometer.save
-    		render json: current_student.cronometer_logs.order(date: :desc)
+    		render json: current_student.cronometer_logs.order("date DESC, id DESC").to_json(:include => :discipline)
   		else
     		render json: @cronometer.errors, status: :unprocessable_entity
   		end
@@ -18,7 +18,7 @@ class Api::CronometerLogsController < ApiController
 	end
 
   def list_of_time_logs
-    render json: current_student.cronometer_logs.order(date: :desc)
+    render json: current_student.cronometer_logs.order("date DESC, id DESC").to_json(:include => :discipline)
   end
 
 
