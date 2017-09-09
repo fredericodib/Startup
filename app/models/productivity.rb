@@ -68,11 +68,12 @@ class Productivity < ApplicationRecord
 					correct_disciplie = correct_disciplie + pro.correct_questions
 					time_disciplie = time_disciplie + pro.time_studed
 				end
-				name = Discipline.find(d_id).name
+				full_name = Discipline.find(d_id).name
+				name = Discipline.find(d_id).nick_name
 				percent = correct_disciplie / total_disciplie * 100
 				percent = percent.round(2)
-				bar_chart << [{name: name, data: percent}]
-				pie_chart_total_time << {name: name, data: time_disciplie}
+				bar_chart << [{name: name, data: percent, full_name: full_name}]
+				pie_chart_total_time << {name: name, data: time_disciplie, full_name: full_name}
 			end
 
 			@data = {totalQuestions: total, totalTime: time, pieChartTotalData: pie_chart_total_data, pieChartTotalTime: pie_chart_total_time, BarChart: bar_chart}

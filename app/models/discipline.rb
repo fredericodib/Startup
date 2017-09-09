@@ -6,4 +6,6 @@ class Discipline < ApplicationRecord
 
 
 	enum discipline_type: [ :pre_vestibular, :preparatorio_concurcos ]
+
+	default_scope { order(name: :asc) }
 end
