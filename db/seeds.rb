@@ -263,7 +263,7 @@ Discipline.find_or_create_by(name: 'Análise de Balanços', nick_name: 'A. Balan
 Discipline.find_or_create_by(name: 'Criminalística', nick_name: 'Criminalística', discipline_type: 'preparatorio_concurcos')
 Discipline.find_or_create_by(name: 'Medicina do Trabalho', nick_name: 'M. Trabalho', discipline_type: 'preparatorio_concurcos')
 Discipline.find_or_create_by(name: 'Metodologia da Investigação Policial', nick_name: 'MI Policial', discipline_type: 'preparatorio_concurcos')
-Discipline.find_or_create_by(name: 'Legislação da AGU', nick_name: '', discipline_type: 'AGU')
+Discipline.find_or_create_by(name: 'Legislação da AGU', nick_name: 'AGU', discipline_type: 'preparatorio_concurcos')
 Discipline.find_or_create_by(name: 'Direito Marítimo', nick_name: 'D. Marítimo', discipline_type: 'preparatorio_concurcos')
 
 
