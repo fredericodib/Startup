@@ -6,15 +6,15 @@ class Productivity < ApplicationRecord
 
 	def self.find_productivity(rengeTime, customRangeBeginning, customRangeEnd, student, discipline)
 		if rengeTime == "today"
-			date = Date.today
+			date = Date.current
 			@interval = date..date.end_of_day
 		elsif rengeTime == "week"
-			dateb = Date.today.at_beginning_of_week
-			datee = Date.today.at_end_of_week
+			dateb = Date.current.at_beginning_of_week
+			datee = Date.current.at_end_of_week
 			@interval = dateb..datee.end_of_day
 		elsif rengeTime == "month"
-			dateb = Date.today.at_beginning_of_month
-			datee = Date.today.at_end_of_month
+			dateb = Date.current.at_beginning_of_month
+			datee = Date.current.at_end_of_month
 			@interval = dateb..datee.end_of_day
 		else
 			dateb = Date.parse(customRangeBeginning)
